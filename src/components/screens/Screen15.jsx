@@ -1,28 +1,32 @@
+import { useContext } from "react";
 import Button from "../Button";
 import { Card } from "../Card/Card";
 import CustomAccordian from "../CustomAccordian";
 import { ZoomMeet } from "../ZoomMeet";
+import MyContext from "../../context/context";
 
 const Screen15 = ({ nextHandler }) => {
+  const { sharedValue, setsharedValue } = useContext(MyContext);
+  console.log("sharedValue", sharedValue);
   return (
     <>
       <ZoomMeet />
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"General"}>
         <Card className="bg-lime-400">
-          <p>Confusion Time</p>
-          <p>Timer</p>
+          <p>Best valinger for the day</p>
+          <p>{sharedValue}</p>
         </Card>
       </CustomAccordian>
 
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"Specific Instructions"}>
         <Card className="bg-yellow-500 bg-green-500">
-          <p>Moderrator:</p>
+          <p>Moderator:</p>
           <p>
-            Hi /"name"/ you can share your confusion now, you have <br />4 minutes
+            `say:Congratualtions {sharedValue} for getting selected as the best <br />
+            valinger for the day`
           </p>
-          <Button onClick={nextHandler}>START TIMER</Button>
-          <p>after the sharing click </p>
-          <Button>Next</Button>
+          <p>click</p>
+          <Button onClick={nextHandler}>Next</Button>
         </Card>
       </CustomAccordian>
     </>

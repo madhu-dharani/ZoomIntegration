@@ -7,22 +7,25 @@ const Screen13 = ({ nextHandler }) => {
   return (
     <>
       <ZoomMeet />
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"General"}>
         <Card className="bg-lime-400">
-          <p>Confusion Time</p>
-          <p>Timer</p>
+          <p>
+            Thank you everyone for honest sharing and <br />
+            empathetic listening.
+          </p>
         </Card>
       </CustomAccordian>
 
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"Specific Instructions"}>
         <Card className="bg-yellow-500 bg-green-500">
           <p>Moderrator:</p>
           <p>
-            Hi /"name"/ you can share your confusion now, you have <br />4 minutes
+            say: Thank you everyone for honest sharing and
+            <br />
+            empathetic listening.
           </p>
-          <Button onClick={nextHandler}>START TIMER</Button>
-          <p>after the sharing click </p>
-          <Button>Next</Button>
+          <p>click </p>
+          <Button onClick={nextHandler}>Next</Button>
         </Card>
       </CustomAccordian>
     </>

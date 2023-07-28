@@ -1,20 +1,30 @@
+import { useState } from "react";
 import Button from "../Button";
 import { Card } from "../Card/Card";
 import CustomAccordian from "../CustomAccordian";
+import StartButton from "../StarButton";
+import CountdownTimer from "../Timer";
 import { ZoomMeet } from "../ZoomMeet";
 
 const Screen7 = ({ nextHandler }) => {
+  const [startTimer, setStartTimer] = useState(false);
+
+  const handleStartTimer = () => {
+    setStartTimer(true);
+  };
   return (
     <>
       <ZoomMeet />
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"General"}>
         <Card className="bg-lime-400">
           <p>Question time</p>
-          <p>Timer 2:00</p>
+          <p>
+            <CountdownTimer initialTimeInSeconds={120} startTimer={startTimer} />
+          </p>
         </Card>
       </CustomAccordian>
 
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"Specific Instructions"}>
         <Card className="bg-yellow-500 bg-green-500">
           <p>Moderrator:</p>
           <p>
@@ -26,7 +36,7 @@ const Screen7 = ({ nextHandler }) => {
             <br />
             does not miss them.
           </p>
-          <Button>START TIMER</Button>
+          <StartButton onStartClick={handleStartTimer} />
           <p>
             after the questions has been asked, click
             <br />

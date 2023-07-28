@@ -7,7 +7,7 @@ const Screen4 = ({ nextHandler }) => {
   return (
     <>
       <ZoomMeet />
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"General"}>
         <Card className="bg-lime-400">
           <p>Undeciding process</p>
           <p>unDecider shares their confusions - 4 mins</p>
@@ -24,7 +24,7 @@ const Screen4 = ({ nextHandler }) => {
         </Card>
       </CustomAccordian>
 
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"Specific Instructions"}>
         <Card className="bg-yellow-500 bg-green-500">
           <p>Moderator:</p>
           <p>

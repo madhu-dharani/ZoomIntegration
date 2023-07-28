@@ -1,20 +1,28 @@
+import { useState } from "react";
 import Button from "../Button";
 import { Card } from "../Card/Card";
 import CustomAccordian from "../CustomAccordian";
 import { ZoomMeet } from "../ZoomMeet";
+import CountdownTimer from "../Timer";
 
 const Screen6 = ({ nextHandler }) => {
+  const [startTimer, setStartTimer] = useState(false);
+  const handleStartTimer = () => {
+    setStartTimer(true);
+  };
   return (
     <>
       <ZoomMeet />
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"General"}>
         <Card className="bg-lime-400">
           <p>Confusion Time</p>
-          <p>Timer 2:41</p>
+          <div>
+            <CountdownTimer initialTimeInSeconds={161} startTimer={startTimer} />
+          </div>
         </Card>
       </CustomAccordian>
 
-      <CustomAccordian accordianTitle={"Accordian1"}>
+      <CustomAccordian accordianTitle={"Specific Instructions"}>
         <Card className="bg-yellow-500 bg-green-500">
           <p>UnDecider:</p>
           <p>
